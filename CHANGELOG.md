@@ -2,6 +2,55 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.12.0](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/compare/v1.11.0...v1.12.0) (2022-12-15)
+
+
+### Features
+
+* [VIC-795] added fork auto sync config ([b283d22](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/b283d22b8199c1adb4e7ae9b88134bff3baa67c2))
+* add ghcr registry ([f490586](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/f4905869d4506dec8999be34ccbc73cec58d2b24))
+* add number of done appointments to data export and add mongo aggregation ([cb3ec69](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/cb3ec694ba73f166a105d2cbdbec310919313a05))
+* add statistics endpoint and tenantId to registration statistics ([1bcbfcd](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/1bcbfcdec865da8aabd22e9c2bc2cb9d212b5c3e))
+* booking event data enrichment and parsing ([a568da2](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/a568da2dc5c49498c3ac4e07ab5c947ffd13d113))
+* change aggregation to reflect currentBookingId ([e83e813](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/e83e813fe5c5e42447fffb594236dd3f8bc12cb2))
+* create basic booking events and listeners ([1855442](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/1855442cc5914fb0e0ca30700b5ed0371e9c845b))
+* extend stats event message with tenantId and endData attributes ([6be9648](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/6be964885b7f3669ba452bbfefa70b6e6af16064))
+* extended spring boot web debug logging ([1a5232e](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/1a5232e1d0024a32369119548c62917d6535b7bd))
+* improve dev process ([3a0df81](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/3a0df813c1390e4102f001642c5edd5a70b27f11))
+* improve dev processes ([88043d4](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/88043d4e43c30454a6ec40107037782bdbcc2e8c))
+* logic for keeping track of booking flows ([0b3e964](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/0b3e96415e8fa232e07a6a8e2e30a0a84ba8aa3c))
+* only count appointments in the past, no matter the range ([d36eac6](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/d36eac61a1f3649b1e0c7351f88c383372734b25))
+* registration event type ([6aaf062](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/6aaf062d2a882b50385a6c98bf90ce4fdec05b3c))
+* registration event type and listener ([a1e5ddc](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/a1e5ddc62d142d7b3df4e07d97186e08a71618c4))
+* remove extended debug logging ([1fd9eda](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/1fd9edaa2f881d960a34f3e6b98f6404fac9a8e2))
+* staging image workflow ([cc90955](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/cc90955aed7df1fc0fcdfb86a5654afc581ae045))
+* VIC-1342 - Data Export - End date field is populated with the date when chat was Archived ([86a3d21](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/86a3d213d32ce4bffa8001e8c59de1266146064c))
+* VIC-1342 - Data Export - End date field is populated with the date when chat was Archived ([d34c1d9](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/d34c1d92d3d62b8fb6636c48bf713fbb43f0ca81))
+* VIC-1342 - Data Export - End date field is populated with the date when chat was Archived ([4e05397](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/4e053976e0b413461a749fd1dee54868e28f7885))
+* VIC-1342 - Data Export - End date field is populated with the date when chat was Archived ([6ebba86](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/6ebba86f53fd11860db0d896c4d4c89534b798cf))
+* VIC-1342 - Data Export - End date field is populated with the date when chat was Archived ([caa9a42](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/caa9a4290c430ac29dc2a0cd0b0fddcbf23e8ffa))
+* VIC-1342 - Data Export - End date field is populated with the date when chat was Archived ([1e5df09](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/1e5df0904223a91bf4c00fc5d01419a7aa46b374))
+* VIC-1342 - Data Export - End date field is populated with the date when chat was Archived ([bdee090](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/bdee090fda35b24850bd51ce0b4b09d4180ab549))
+* VIC-1342 - Data Export - End date field is populated with the date when chat was Archived ([c62960d](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/c62960d58f338bb5956d921f7d1ffbdeb3bdd406))
+
+
+### Bug Fixes
+
+* aggregation parameter index ([8eafcc3](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/8eafcc381390b8f5e7c844f73f13394605bc32b3))
+* code smells ([8a0c7b7](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/8a0c7b79145081f1ce7b5ac86cca53da0d380702))
+* code smells ([709e9b8](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/709e9b8852d6a5bb27150638079c07ac2bc37725))
+* docu ([37e22da](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/37e22da49edb1bbcd5a0a65b6c19d265e936066b))
+* improve and fix CVEs ([eb424ef](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/eb424ef9e0f7717c688ce351aa6894971427504a))
+* improve and fix CVEs ([62094b6](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/62094b650103941d2fd635da69515c9ac612c5e0))
+* improve and fix CVEs ([434ef14](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/434ef1416c3a2eac9456e1d5028001b77f6ca68b))
+* improve and fix CVEs ([9ecda66](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/9ecda6638373037010efb8e1f841a8d76a2fc1c0))
+* indention format ([0b5abe5](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/0b5abe5d36c064d4f67317caf9960ebe7050f9dc))
+* introduce trivy image scan ([68d3e87](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/68d3e87c94e453ffffbf034770a51d4f683ce91e))
+* introduce trivy image scan ([f9f72fc](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/f9f72fc29cf3d89dd090029fe09c3e9603671cc6))
+* introduce trivy image scan ([c904b78](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/c904b78dc743f50b910cee4e7655ed3ba6fb65f1))
+* styling ([f4ed0c3](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/f4ed0c3d351aecbb67ac16cc9a59ecab69d08d07))
+* tenant resolution for SaaS ([46c9829](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/46c9829b627d59c25c409c6cb5443333ed7800b7))
+
 ## [1.11.0](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/compare/v1.10.0...v1.11.0) (2022-04-15)
 
 
