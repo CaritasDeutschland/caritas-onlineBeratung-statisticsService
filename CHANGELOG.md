@@ -2,6 +2,37 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.13.0](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/compare/v1.12.2...v1.13.0) (2023-05-10)
+
+
+### Features
+
+* allow start-video events without sessions ([9e31b9f](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/9e31b9fe0a6589f598c57a1a9c9158866804c13f))
+* disallow access to stats endpoint if stats feature is off ([9408b28](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/9408b28bf243e21c0c738041c4deb9dd56bacaca))
+* disallow access to stats endpoint if stats feature is off ([2e88ac6](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/2e88ac6b625f73202282dcad4079bd7de9275b86))
+* exclude null sessions from session counting ([768d1b7](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/768d1b73de18058d75133ad8563a600ed12ca28e))
+* insert events if session ID is given ([94d3c11](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/94d3c11f446167588e7cdd1d09959e04ebf16ce2))
+* updated docker workflow with proper tagging ([7a87ffe](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/7a87ffef4f902b1644f6c1ac821b3791aff29fd8))
+
+
+### Bug Fixes
+
+* add healthcheck ([966ddfd](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/966ddfd3cdbc818e9820814dad1964a6837bbae3))
+* add healthcheck ([d9f6e6c](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/d9f6e6cf1dd14da5c2dc0bc7087d5dc14dc635d8))
+* add healthcheck, removed actuator due to securityFilterChain vs KeycloakWebSecurityConfigurerAdapter incompatibility ([4d9ef1d](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/4d9ef1d2b82c08a85e568856aa6819e9339fe890))
+* add healthcheck, removed actuator due to securityFilterChain vs KeycloakWebSecurityConfigurerAdapter incompatibility ([c805275](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/c8052756e219e4a3c8559f68e8dbd5b8ebac8342))
+* add healthcheck, removed actuator due to securityFilterChain vs KeycloakWebSecurityConfigurerAdapter incompatibility ([8b7767c](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/8b7767c099500024bf07a63a9033a66933819456))
+* add healthcheck, removed actuator due to securityFilterChain vs KeycloakWebSecurityConfigurerAdapter incompatibility ([e1af520](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/e1af52080aaf46591e5a7ff4a36ff9d71876c8f4))
+* add healthcheck, removed actuator due to securityFilterChain vs KeycloakWebSecurityConfigurerAdapter incompatibility ([289839f](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/289839ffb5ba8a8ebb5e472d6ee9fa377cc0fe8b))
+* add healthcheck, removed actuator due to securityFilterChain vs KeycloakWebSecurityConfigurerAdapter incompatibility ([c8dd6ef](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/c8dd6ef78dfa378b1238569e4326e853d741dad3))
+* allow null session IDs ([5efaf01](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/5efaf011f6656f42c08a754cb90c828da8d9be1b))
+* disable embedded mongo autocongiguration for healtchecks ([0216372](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/02163723261db11a6b96b19d6b580f46aae2ccc6))
+* doubled start-video-call find when same call id ([dfb5863](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/dfb5863c6d2e1cdc4d03973729e83b8944265538))
+* doubled start-video-call status find ([341ceb0](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/341ceb0310fca04f3ba007567d71d6f4a38d81f0))
+* fix proper exception handling ([18f4aa9](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/18f4aa925e8d4f74a3289e6a962feb27117021c0))
+* spring boot starter ([20111a8](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/20111a8afdaf1838c0ff6e58bc8b39f6b8b48aba))
+* tenant setting retrieval for superadmin ([356bc8b](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/commit/356bc8b7f0cf149778707fb763902b7c9e73c10d))
+
 ### [1.12.2](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/compare/v1.12.1...v1.12.2) (2023-01-16)
 
 
