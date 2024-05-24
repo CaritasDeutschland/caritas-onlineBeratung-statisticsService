@@ -11,28 +11,29 @@ import static org.hamcrest.Matchers.is;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-import de.caritas.cob.statisticsservice.api.model.ArchiveSessionStatisticsEventMessage;
+import de.caritas.cob.statisticsservice.api.model.ArchiveOrDeleteSessionStatisticsEventMessage;
 import de.caritas.cob.statisticsservice.api.model.EventType;
 import de.caritas.cob.statisticsservice.api.model.UserRole;
 import de.caritas.cob.statisticsservice.api.service.UserStatisticsService;
 import de.caritas.cob.statisticsservice.api.statistics.model.statisticsevent.StatisticsEvent;
 import de.caritas.cob.statisticsservice.api.statistics.model.statisticsevent.meta.ArchiveMetaData;
 import de.caritas.cob.statisticsservice.userstatisticsservice.generated.web.model.SessionStatisticsResultDTO;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+
 import java.time.OffsetDateTime;
-import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-@RunWith(SpringRunner.class)
-public class ArchiveSessionListenerTest {
+@ExtendWith(SpringExtension.class)
+public class ArchiveOrDeleteSessionListenerTest {
 
   @InjectMocks
-  ArchiveSessionListener archiveSessionListener;
+  ArchiveOrDeleteSessionListener archiveSessionListener;
   @Mock
   MongoTemplate mongoTemplate;
   @Mock
@@ -48,7 +49,7 @@ public class ArchiveSessionListenerTest {
         .thenReturn(sessionStatisticsResultDTO);
 
     OffsetDateTime timestamp = OffsetDateTime.now();
-    ArchiveSessionStatisticsEventMessage archiveSessionStatisticsEventMessage = buildEventMessage(timestamp);
+    ArchiveOrDeleteSessionStatisticsEventMessage archiveSessionStatisticsEventMessage = buildEventMessage(timestamp);
 
     // when
     archiveSessionListener.receiveMessage(archiveSessionStatisticsEventMessage);
@@ -76,8 +77,8 @@ public class ArchiveSessionListenerTest {
         .rcGroupId(RC_GROUP_ID);
   }
 
-  private ArchiveSessionStatisticsEventMessage buildEventMessage(OffsetDateTime timestamp) {
-    return new ArchiveSessionStatisticsEventMessage()
+  private ArchiveOrDeleteSessionStatisticsEventMessage buildEventMessage(OffsetDateTime timestamp) {
+    return new ArchiveOrDeleteSessionStatisticsEventMessage()
         .sessionId(SESSION_ID)
         .tenantId(TENANT_ID)
         .eventType(EventType.ARCHIVE_SESSION)
