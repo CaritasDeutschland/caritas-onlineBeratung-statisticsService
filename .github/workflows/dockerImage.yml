@@ -6,6 +6,7 @@ on:
       - 'release'
       - 'staging'
       - 'develop'
+      - '*'
     tags:
       - "dockerImage.v.*"
       - "v*"
