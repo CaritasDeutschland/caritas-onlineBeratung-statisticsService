@@ -28,6 +28,7 @@ import static de.caritas.cob.statisticsservice.api.testhelper.TestConstants.SESS
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.isA;
+import static org.hamcrest.Matchers.nullValue;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -74,6 +75,39 @@ public class AssignSessionListenerTest {
     assertThat(metaMap.get("requestUri"), is(assignSessionStatisticsEventMessage.getRequestUri()));
     assertThat(metaMap.get("requestUserId"), is(assignSessionStatisticsEventMessage.getRequestUserId()));
     assertThat(metaMap.containsKey(RandomStringUtils.randomAlphanumeric(64)), is(false));
+  }
+
+  @Test
+  public void receiveMessage_Should_saveEventWithSessionId_WhenSessionDataNotAvailable() {
+    // given
+    when(userStatisticsService.retrieveSessionViaSessionId(SESSION_ID))
+        .thenThrow(new RuntimeException("Session not found"));
+
+    AssignSessionStatisticsEventMessage assignSessionStatisticsEventMessage = buildEventMessage(true);
+
+    // when
+    assignSessionListener.receiveMessage(assignSessionStatisticsEventMessage);
+
+    // then
+    verify(mongoTemplate).insert(statisticsEventCaptor.capture());
+
+    StatisticsEvent statisticsEvent = statisticsEventCaptor.getValue();
+    assertThat(statisticsEvent.getEventType(), is(assignSessionStatisticsEventMessage.getEventType()));
+    assertThat(statisticsEvent.getSessionId(), is(SESSION_ID));
+    assertThat(statisticsEvent.getConsultingType(), nullValue());
+    assertThat(statisticsEvent.getAgency(), nullValue());
+    assertThat(statisticsEvent.getTimestamp(), is(assignSessionStatisticsEventMessage.getTimestamp().toInstant()));
+    assertThat(statisticsEvent.getUser().getId(), is(assignSessionStatisticsEventMessage.getUserId()));
+    assertThat(statisticsEvent.getUser().getUserRole(), is(UserRole.CONSULTANT));
+
+    var metaData = statisticsEvent.getMetaData();
+    assertThat(metaData, isA(Map.class));
+
+    @SuppressWarnings("unchecked")
+    var metaMap = (Map<String, String>) metaData;
+    assertThat(metaMap.get("requestReferer"), is(assignSessionStatisticsEventMessage.getRequestReferer()));
+    assertThat(metaMap.get("requestUri"), is(assignSessionStatisticsEventMessage.getRequestUri()));
+    assertThat(metaMap.get("requestUserId"), is(assignSessionStatisticsEventMessage.getRequestUserId()));
   }
 
   @Test

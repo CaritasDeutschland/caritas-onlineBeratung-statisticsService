@@ -32,6 +32,7 @@ public class StartVideoCallListener {
       id = "start-video-call-event-listener",
       queues = "#{rabbitMqConfig.QUEUE_NAME_START_VIDEO_CALL}",
       containerFactory = "simpleRabbitListenerContainerFactory")
+  @SuppressWarnings({"NullAway", "java:S2583"}) // sessionId can be null despite @NonNull annotation
   public void receiveMessage(StartVideoCallStatisticsEventMessage eventMessage) {
     var sessionId = eventMessage.getSessionId();
     var statisticsEventBuilder = isNull(sessionId)
@@ -39,6 +40,7 @@ public class StartVideoCallListener {
             : StatisticsEventBuilder.getInstance(() -> userStatisticsService.retrieveSessionViaSessionId(sessionId));
 
     var statisticsEvent = statisticsEventBuilder
+            .withSessionId(eventMessage.getSessionId())
             .withEventType(eventMessage.getEventType())
             .withTimestamp(eventMessage.getTimestamp().truncatedTo(ChronoUnit.SECONDS).toInstant())
             .withUserId(eventMessage.getUserId())
