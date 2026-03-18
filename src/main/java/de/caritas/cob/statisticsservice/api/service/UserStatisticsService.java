@@ -24,7 +24,7 @@ public class UserStatisticsService {
    * @param sessionId the session id
    * @return an {@link SessionStatisticsResultDTO} instance
    */
-  @Cacheable(value = CacheManagerConfig.SESSION_CACHE, key = "#sessionId")
+  @Cacheable(value = CacheManagerConfig.SESSION_CACHE, key = "#sessionId", condition = "#sessionId != null")
   public SessionStatisticsResultDTO retrieveSessionViaSessionId(Long sessionId) {
     return retrieveSession(sessionId, null);
   }
@@ -35,7 +35,7 @@ public class UserStatisticsService {
    * @param rcGroupId the Rocket.Chat group id
    * @return an {@link SessionStatisticsResultDTO} instance
    */
-  @Cacheable(value = CacheManagerConfig.SESSION_CACHE, key = "#rcGroupId")
+  @Cacheable(value = CacheManagerConfig.SESSION_CACHE, key = "#rcGroupId", condition = "#rcGroupId != null")
   public SessionStatisticsResultDTO retrieveSessionViaRcGroupId(String rcGroupId) {
     return retrieveSession(null, rcGroupId);
   }
