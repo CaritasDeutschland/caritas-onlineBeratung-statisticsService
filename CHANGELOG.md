@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 1.13.3 (2026-06-15)
+
 ### 1.13.2 (2026-03-18)
 
 ### [1.13.1](https://github.com/CaritasDeutschland/caritas-onlineBeratung-statisticsService/compare/v1.13.0...v1.13.1) (2023-09-25)
